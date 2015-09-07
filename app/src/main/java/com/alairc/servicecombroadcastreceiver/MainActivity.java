@@ -8,6 +8,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.alairc.servicecombroadcastreceiver.Services.ServicoTeste;
+
 public class MainActivity extends Activity implements View.OnClickListener{
     Button button_start;
     Button button_stop;
@@ -25,12 +27,16 @@ public class MainActivity extends Activity implements View.OnClickListener{
     }
 
     public void startService(View view){
-        Intent it = new Intent("SERVICO_TEST");
+        //Intent it = new Intent("SERVICO_TEST");
+        //A partir da API 19, é necessário chamar o serviço de forma explicita
+        Intent it = new Intent(MainActivity.this, ServicoTeste.class);
         startService(it);
     }
 
     public void stopService(View view){
-        Intent it = new Intent("SERVICO_TEST");
+        //Intent it = new Intent("SERVICO_TEST");
+        //A partir da API 19, é necessário chamar o serviço de forma explicita
+        Intent it = new Intent(MainActivity.this, ServicoTeste.class);
         stopService(it);
     }
 
