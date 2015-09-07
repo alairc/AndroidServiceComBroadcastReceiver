@@ -1,4 +1,4 @@
-package com.alairc.servicecombroadcastreceiver.Services;
+package com.alairc.servicecombroadcastreceiver.Service;
 
 import android.app.Service;
 import android.content.Intent;
@@ -32,6 +32,9 @@ public class ServicoTeste extends Service {
         w.start();
         threads.add(w);
 
+        //return(START_NOT_STICKY)         -- para não retornar o serviço caso android tenha parado
+        //return(START_STICKY)             -- para retornar o serviço caso android tenha parado
+        //return(START_REDELIVER_INTENT)   -- para retornar o serviço e recuperar valor, se passado
         return(super.onStartCommand(intent, flags, startId));
     }
 
@@ -45,7 +48,7 @@ public class ServicoTeste extends Service {
         }
 
         public void run(){
-            while (ativo && count <= 10){
+            while (ativo && count <= 500){
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e){
