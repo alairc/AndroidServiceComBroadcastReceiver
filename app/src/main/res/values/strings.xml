@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ServiceComBroadcastReceiver</string>
+
+    <string name="label_teste">Teste com Service e Broadcast Receiver</string>
+    <string name="action_settings">Settings</string>
+    <string name="label_botao_start">Star</string>
+    <string name="label_botao_stop">Stop</string>
+</resources>
